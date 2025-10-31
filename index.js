@@ -3,7 +3,11 @@
 // const nodemailer = require('nodemailer');
 import express from 'express'
 import nodemailer from 'nodemailer'
+import dotenv from 'dotenv'
+dotenv.config()
+const Port = process.env.PORT || 3000
 const app = express();
+
 
 app.use(express.json());
 
@@ -37,4 +41,4 @@ app.post('/send-hi', async (req, res) => {
     }
 });
 
-app.listen(3000, () => console.log('Server running on port 3000'));
+app.listen(Port, () => console.log('Server running on port 3000'));
